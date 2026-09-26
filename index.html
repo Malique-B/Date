@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Go Out With Me?</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffe6ea 0%, #ffc3a0 100%);
+      padding: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 35px 25px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(255, 77, 109, 0.2);
+      text-align: center;
+      max-width: 420px;
+      width: 100%;
+      position: relative;
+    }
+
+    /* Icon Graphic Container */
+    .graphic-container {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff0f5;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(255, 77, 109, 0.15);
+    }
+
+    .graphic-container svg {
+      width: 80px;
+      height: 80px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      min-height: 50px;
+    }
+
+    button {
+      padding: 12px 28px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .yes-btn {
+      background-color: #ff4d6d;
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+    }
+
+    .yes-btn:hover {
+      background-color: #ff2a55;
+      transform: scale(1.05);
+    }
+
+    .no-btn {
+      background-color: #e0e0e0;
+      color: #555;
+      position: relative;
+    }
+
+    /* Invitation Details */
+    .invitation-details {
+      background: #fff0f5;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: left;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .detail-item .icon {
+      font-size: 1.4rem;
+    }
+
+    .detail-item strong {
+      color: #ff4d6d;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: block;
+    }
+
+    .detail-item p {
+      color: #333;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .footer-note {
+      font-style: italic;
+      color: #ff758f;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STEP 1: Asking Screen -->
+  <div id="prompt-card" class="card">
+    <div class="graphic-container">
+      <!-- Rose Heart SVG -->
+      <svg viewBox="0 0 24 24" fill="#ff4d6d">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    </div>
+    <h1 id="question-text">Will you go out with me? 🌹</h1>
+    <div class="btn-group">
+      <button id="yes-btn" type="button" class="yes-btn">Yes!</button>
+      <button id="no-btn" type="button" class="no-btn">No</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: Invitation Details Card -->
+  <div id="invitation-card" class="card hidden">
+    <div class="graphic-container">
+      <!-- Love Letter Envelope SVG -->
+      <svg viewBox="0 0 24 24" fill="#ff4d6d">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </div>
+    <h1>It's a Date, Pretty Girl 💖</h1>
+    <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">Here are all the details for our date🌻:</p>
+    
+    <div class="invitation-details">
+      <div class="detail-item">
+        <span class="icon">📅</span>
+        <div>
+          <strong>Date</strong>
+          <p>Friday, October 2nd 2026</p>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <span class="icon">⏰</span>
+        <div>
+          <strong>Time</strong>
+          <p>7:00 PM</p>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <span class="icon">📍</span>
+        <div>
+          <strong>Location</strong>
+          <p>The Nines By Cove Collection Sea Point</p>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <span class="icon">👗</span>
+        <div>
+          <strong>Dress Code</strong>
+          <p>Smart Casual / Dress to Impress</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer-note">Can't wait to see you, Pretty Girl ✨</p>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const promptCard = document.getElementById('prompt-card');
+      const invitationCard = document.getElementById('invitation-card');
+      const yesBtn = document.getElementById('yes-btn');
+      const noBtn = document.getElementById('no-btn');
+
+      yesBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        promptCard.classList.add('hidden');
+        invitationCard.classList.remove('hidden');
+      });
+
+      const moveNoButton = () => {
+        const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 40);
+        const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 40);
+        
+        noBtn.style.position = 'fixed';
+        noBtn.style.left = `${Math.max(20, x)}px`;
+        noBtn.style.top = `${Math.max(20, y)}px`;
+      };
+
+      noBtn.addEventListener('mouseover', moveNoButton);
+      noBtn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        moveNoButton();
+      });
+    });
+  </script>
+</body>
+</html>
